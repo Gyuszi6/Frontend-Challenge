@@ -1,0 +1,127 @@
+.list {
+  position: relative;
+  width: 1190px;
+  height: 120px;
+  left: 51px;
+  right: 88px;
+  top: 472px;
+  margin-bottom: 16px;
+  background: #ffffff;
+  -webkit-box-shadow: 3px 4px 21px #d0e4ef;
+          box-shadow: 3px 4px 21px #d0e4ef;
+  border-radius: 16px;
+  list-style: none;
+}
+
+.button {
+  display: block;
+  border: none;
+  background: #ffffff;
+}
+
+.titlerow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.datarow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.weighttitle {
+  position: absolute;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 683px;
+}
+
+.datetitle {
+  position: relative;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 32px;
+}
+
+.packetpointtitle {
+  position: absolute;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 305px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.datevalue {
+  margin-left: 32px;
+  margin-right: 129px;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  color: #5c717c;
+}
+
+.packetpointvalue {
+  position: absolute;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 305px;
+  color: #5c717c;
+}
+
+.weightvalue {
+  position: absolute;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 683px;
+  color: #5c717c;
+}
+
+.icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin: 0;
+}
+/*# sourceMappingURL=Items.css.map */

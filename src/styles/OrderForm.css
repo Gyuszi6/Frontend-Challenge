@@ -1,0 +1,150 @@
+.orderform {
+  margin-top: 8px;
+  position: absolute;
+  width: 1190px;
+  height: 328px;
+  left: 88px;
+  top: 80px;
+  background: #ffffff;
+  -webkit-box-shadow: 3px 4px 21px #d0e4ef;
+          box-shadow: 3px 4px 21px #d0e4ef;
+  border-radius: 16px;
+}
+
+.formtitle {
+  position: absolute;
+  width: 184px;
+  height: 32px;
+  left: 120px;
+  top: 40px;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 27px;
+  color: #102544;
+}
+
+.weight {
+  position: static;
+  margin-left: 32px;
+  width: 184px;
+  height: 24px;
+  left: 120px;
+  top: 112px;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 22px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #102544;
+}
+
+.packetpoint {
+  position: static;
+  margin-left: 32px;
+  margin-top: 24px;
+  width: 184px;
+  height: 24px;
+  left: 120px;
+  top: 216px;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 22px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #102544;
+}
+
+.weightinput {
+  position: static;
+  margin-left: 32px;
+  margin-top: 16px;
+  width: 376px;
+  height: 40px;
+  left: 120px;
+  top: 152px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background: #ffffff;
+  border: 1px solid #c7dae4;
+  border-radius: 8px;
+}
+
+.weightinput::-webkit-input-placeholder {
+  text-align: right;
+  margin-right: 16px;
+}
+
+.weightinput:-ms-input-placeholder {
+  text-align: right;
+  margin-right: 16px;
+}
+
+.weightinput::-ms-input-placeholder {
+  text-align: right;
+  margin-right: 16px;
+}
+
+.weightinput::placeholder {
+  text-align: right;
+  margin-right: 16px;
+}
+
+.packetpointinput {
+  margin-left: 32px;
+  margin-top: 16px;
+  position: static;
+  width: 376px;
+  height: 40px;
+  left: 120px;
+  top: 256px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background: #ffffff;
+  border: 1px solid #c7dae4;
+  border-radius: 8px;
+}
+
+.savebutton {
+  margin-left: 32px;
+  margin-top: 40px;
+  width: 184px;
+  height: 40px;
+  background: #c7dae4;
+  border-radius: 32px;
+  border: none;
+}
+
+.savebutton:enabled {
+  background: #17c873;
+}
+
+.buttontext {
+  width: 152px;
+  height: 24px;
+  margin-left: 10px;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 22px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  color: #ffffff;
+}
+/*# sourceMappingURL=OrderForm.css.map */

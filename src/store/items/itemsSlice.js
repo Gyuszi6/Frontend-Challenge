@@ -10,15 +10,18 @@ const itemsSlice = createSlice({
         id: uuidv4(),
         weight: action.payload.weight,
         packetPoint: action.payload.packetPoint,
-        date: "",
-        editing: false,
+        date: action.payload.date,
       };
       state.push(item);
     },
     DELETE_ITEM: (state, action) => {
       return state.filter((item) => item.id !== action.payload.id);
     },
-    EDIT_ITEM: (state, action) => {},
+    EDIT_ITEM: (state, action) => {
+      state.filter((item) => item.id === action.payload.id);
+      action.payload.weight = state.weight;
+      action.payload.packetPoint = state.packetPoint;
+    },
   },
 });
 

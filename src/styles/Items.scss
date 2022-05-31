@@ -1,0 +1,103 @@
+.list {
+  position: relative;
+  width: 1190px;
+  height: 120px;
+  left: 51px;
+  right: 88px;
+  top: 472px;
+  margin-bottom: 16px;
+  background: #ffffff;
+  box-shadow: 3px 4px 21px #d0e4ef;
+  border-radius: 16px;
+  list-style: none;
+}
+
+.button {
+  display: block;
+  border: none;
+  background: #ffffff;
+}
+
+.titlerow {
+  display: flex;
+}
+
+.datarow {
+  display: flex;
+  justify-content: space-between;
+}
+
+.weighttitle {
+  position: absolute;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  margin-left: 683px;
+}
+
+.datetitle {
+  position: relative;
+
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  margin-left: 32px;
+}
+
+.packetpointtitle {
+  position: absolute;
+
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  display: flex;
+  margin-left: 305px;
+  align-items: center;
+}
+
+.datevalue {
+  margin-left: 32px;
+  margin-right: 129px;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+
+  color: #5c717c;
+}
+
+.packetpointvalue {
+  position: absolute;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  display: flex;
+  margin-left: 305px;
+  color: #5c717c;
+}
+
+.weightvalue {
+  position: absolute;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  display: flex;
+  margin-left: 683px;
+
+  color: #5c717c;
+}
+
+.icons {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0;
+}

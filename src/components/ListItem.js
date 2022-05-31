@@ -1,41 +1,49 @@
 import { DeleteIcon, EditIcon } from "./Icons";
 import { useDispatch } from "react-redux";
 import { DELETE_ITEM, EDIT_ITEM } from "../store/items/itemsSlice";
+import "../styles/Items.css";
 
 const ListItem = (item) => {
   const dispatch = useDispatch();
+
   const deleteItemHandler = () => {
     dispatch(DELETE_ITEM({ id: item.id }));
   };
 
-  const editItemHandler = (item) => {
+  const editItemHandler = () => {
     dispatch(
       EDIT_ITEM({
-        editing: !item.editing,
+        id: item.id,
         weight: item.weight,
         packetPoint: item.packetPoint,
       })
     );
+    const editable = { weight: item.weight, packetPoint: item.packetPoint };
+    console.log(item.weight);
+    console.log(item.packetPoint);
+    return editable;
   };
 
   return (
-    <li>
-      <div>
-        <p>Dátum</p>
-        <p>Csomagpont neve</p>
-        <p>Küldemény súlya</p>
+    <li className="list">
+      <div className="titlerow">
+        <p className="datetitle">Dátum</p>
+        <p className="packetpointtitle">Csomagpont neve</p>
+        <p className="weighttitle">Küldemény súlya</p>
       </div>
-      <div>
-        <button onClick={deleteItemHandler}>
-          <DeleteIcon />
-        </button>
-        <button onClick={editItemHandler}>
-          <EditIcon />
-        </button>
-      </div>
-      <div>
-        <p>{item.weight}</p>
-        <p>{item.packetPoint}</p>
+
+      <div className="datarow">
+        <p className="datevalue">{item.date}</p>
+        <p className="packetpointvalue">{item.packetPoint}</p>
+        <p className="weightvalue">{item.weight}</p>
+        <div className="icons">
+          <button className="button" onClick={deleteItemHandler}>
+            <DeleteIcon />
+          </button>
+          <button className="button" onClick={editItemHandler}>
+            <EditIcon />
+          </button>
+        </div>
       </div>
     </li>
   );
