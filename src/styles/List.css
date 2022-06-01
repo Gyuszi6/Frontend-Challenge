@@ -11,4 +11,30 @@
   line-height: 27px;
   color: #102544;
 }
+
+@media screen and (max-width: 360px) {
+  .listtitle {
+    position: absolute;
+    width: 312px;
+    height: 32px;
+    left: 24px;
+    top: 344px;
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 27px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    color: #102544;
+  }
+}
 /*# sourceMappingURL=List.css.map */

@@ -6,7 +6,7 @@ const OrderList = (props) => {
   const items = useSelector((state) => state.items);
   return (
     <div>
-      <h1 className="listtitle">Megrendelések</h1>
+      <p className="listtitle">Megrendelések</p>
       <ul>
         <div>
           {items.map((item) => (

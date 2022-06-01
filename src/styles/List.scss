@@ -4,12 +4,29 @@
   height: 32px;
   left: 120px;
   top: 432px;
-
   font-family: "Open Sans";
   font-style: normal;
   font-weight: 700;
   font-size: 20px;
   line-height: 27px;
-
   color: #102544;
+}
+@media screen and (max-width: 360px) {
+  .listtitle {
+    position: absolute;
+    width: 312px;
+    height: 32px;
+    left: 24px;
+    top: 344px;
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 27px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    color: #102544;
+  }
 }

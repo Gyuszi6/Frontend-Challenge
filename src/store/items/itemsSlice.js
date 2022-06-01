@@ -12,6 +12,8 @@ const itemsSlice = createSlice({
         packetPoint: action.payload.packetPoint,
         date: action.payload.date,
       };
+      window.localStorage.setItem("itemlist", action.payload.item);
+      console.log(window.localStorage.getItem("itemlist"));
       state.push(item);
     },
     DELETE_ITEM: (state, action) => {

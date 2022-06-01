@@ -57,12 +57,12 @@ const OrderForm = (item, editable) => {
 
   return (
     <div>
-      <div>
-        <h1 className="formtitle">Megrendelő űrlap</h1>
-      </div>
-      <div className="orderform">
-        <form onSubmit={submitHandler}>
-          <p className="weight">Küldemény súlya</p>
+      <p className="formtitle">Megrendelő űrlap</p>
+      <form className="orderform" onSubmit={submitHandler}>
+        <div>
+          <div>
+            <p className="weight">Küldemény súlya</p>
+          </div>
           <input
             className="weightinput"
             type="number"
@@ -74,30 +74,32 @@ const OrderForm = (item, editable) => {
             }}
             placeholder="gramm"
           />
+        </div>
+        <div>
           <div>
-            <label className="packetpoint">Csomagpont</label>
-            <input
-              className="packetpointinput"
-              type="text"
-              list="packetpoints"
-              value={packetPoint}
-              onChange={(e) => {
-                setPacketPoint(e.target.value);
-              }}
-            />
-            <datalist id="packetpoints">
-              <option>{datas}</option>
-            </datalist>
+            <p className="packetpoint">Csomagpont</p>
           </div>
-          <button
-            className="savebutton"
-            type="submit"
-            disabled={weight <= 0 || packetPoint === ""}
-          >
-            <div className="buttontext">Mentés</div>
-          </button>
-        </form>
-      </div>
+          <input
+            className="packetpointinput"
+            type="text"
+            list="packetpoints"
+            value={packetPoint}
+            onChange={(e) => {
+              setPacketPoint(e.target.value);
+            }}
+          />
+          <datalist id="packetpoints">
+            <option>{datas}</option>
+          </datalist>
+        </div>
+        <button
+          className="savebutton"
+          type="submit"
+          disabled={weight <= 0 || packetPoint === ""}
+        >
+          <div className="buttontext">Mentés</div>
+        </button>
+      </form>
     </div>
   );
 };

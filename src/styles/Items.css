@@ -13,40 +13,26 @@
   list-style: none;
 }
 
-.button {
-  display: block;
-  border: none;
-  background: #ffffff;
+@media screen and (max-width: 360px) {
+  .list {
+    position: relative;
+    width: 328px;
+    height: 132px;
+    top: 392px;
+    left: -30px;
+    margin-bottom: 16px;
+    background: #ffffff;
+    -webkit-box-shadow: 3px 4px 21px #d0e4ef;
+            box-shadow: 3px 4px 21px #d0e4ef;
+    border-radius: 16px;
+    list-style: none;
+  }
 }
 
 .titlerow {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-}
-
-.datarow {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.weighttitle {
-  position: absolute;
-  font-family: "Open Sans";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 16px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-left: 683px;
 }
 
 .datetitle {
@@ -64,6 +50,25 @@
   margin-left: 32px;
 }
 
+@media screen and (max-width: 360px) {
+  .datetitle {
+    width: 56px;
+    height: 24px;
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    color: #102544;
+  }
+}
+
 .packetpointtitle {
   position: absolute;
   font-family: "Open Sans";
@@ -79,6 +84,57 @@
           align-items: center;
 }
 
+@media screen and (max-width: 360px) {
+  .packetpointtitle {
+    position: relative;
+    width: 144px;
+    height: 24px;
+    margin-left: 48px;
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    color: #102544;
+  }
+}
+
+.weighttitle {
+  position: absolute;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 683px;
+}
+
+@media screen and (max-width: 360px) {
+  .weighttitle {
+    display: none;
+  }
+}
+
+.datarow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
 .datevalue {
   margin-left: 32px;
   margin-right: 129px;
@@ -87,6 +143,25 @@
   font-weight: 400;
   font-size: 15px;
   color: #5c717c;
+}
+
+@media screen and (max-width: 360px) {
+  .datevalue {
+    position: -webkit-sticky;
+    position: sticky;
+    width: 88px;
+    height: 40px;
+    left: 32px;
+    top: 492px;
+    margin-top: 0;
+    margin-right: 0;
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+    color: #5c717c;
+  }
 }
 
 .packetpointvalue {
@@ -102,6 +177,21 @@
   color: #5c717c;
 }
 
+@media screen and (max-width: 360px) {
+  .packetpointvalue {
+    position: static;
+    width: 128px;
+    height: 56px;
+    margin: 0;
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+    color: #5c717c;
+  }
+}
+
 .weightvalue {
   position: absolute;
   font-family: "Open Sans";
@@ -115,6 +205,26 @@
   color: #5c717c;
 }
 
+@media screen and (max-width: 360px) {
+  .weightvalue {
+    display: none;
+  }
+}
+
+.button {
+  display: block;
+  border: none;
+  background: #ffffff;
+}
+
+@media screen and (max-width: 360px) {
+  .button {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
 .icons {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -123,5 +233,11 @@
       -ms-flex-pack: end;
           justify-content: flex-end;
   margin: 0;
+}
+
+@media screen and (max-width: 360px) {
+  .icons {
+    display: block;
+  }
 }
 /*# sourceMappingURL=Items.css.map */
