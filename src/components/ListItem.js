@@ -1,4 +1,4 @@
-import { DeleteIcon, EditIcon } from "./Icons";
+import { DeleteIcon1, DeleteIcon2, EditIcon } from "./Icons";
 import { useDispatch } from "react-redux";
 import { DELETE_ITEM, EDIT_ITEM } from "../store/items/itemsSlice";
 import "../styles/Items.css";
@@ -37,10 +37,11 @@ const ListItem = (item) => {
         <p className="packetpointvalue">{item.packetPoint}</p>
         <p className="weightvalue">{item.weight}</p>
         <div className="icons">
-          <button className="button" onClick={deleteItemHandler}>
-            <DeleteIcon />
+          <button className="deletebutton" onClick={deleteItemHandler}>
+            <DeleteIcon1 />
+            <DeleteIcon2 />
           </button>
-          <button className="button" onClick={editItemHandler}>
+          <button className="editbutton" onClick={editItemHandler}>
             <EditIcon />
           </button>
         </div>

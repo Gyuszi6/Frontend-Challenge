@@ -17,7 +17,7 @@
     width: 328px;
     height: 132px;
     top: 392px;
-    left: -30px;
+    left: -31px;
     margin-bottom: 16px;
     background: #ffffff;
     box-shadow: 3px 4px 21px #d0e4ef;
@@ -144,9 +144,11 @@
 }
 @media screen and (max-width: 360px) {
   .packetpointvalue {
-    position: static;
+    position: relative;
     width: 128px;
     height: 56px;
+    right: 8px;
+
     margin: 0;
     font-family: "Open Sans";
     font-style: normal;
@@ -174,14 +176,25 @@
   }
 }
 
-.button {
-  display: block;
+.deletebutton {
   border: none;
   background: #ffffff;
 }
 @media screen and (max-width: 360px) {
-  .button {
-    justify-content: space-between;
+  .deletebutton {
+    position: relative;
+    border: none;
+    background: #ffffff;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .editbutton {
+    position: relative;
+    bottom: 37px;
+    right: 3px;
+    border: none;
+    background: #ffffff;
   }
 }
 
@@ -192,6 +205,6 @@
 }
 @media screen and (max-width: 360px) {
   .icons {
-    display: block;
+    flex-direction: column-reverse;
   }
 }
