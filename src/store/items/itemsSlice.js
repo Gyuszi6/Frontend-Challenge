@@ -1,4 +1,4 @@
-import { createSlice, nanoid } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 import { v4 as uuidv4 } from "uuid";
 
 const itemsSlice = createSlice({
@@ -12,8 +12,6 @@ const itemsSlice = createSlice({
         packetPoint: action.payload.packetPoint,
         date: action.payload.date,
       };
-      window.localStorage.setItem("itemlist", action.payload.item);
-      console.log(window.localStorage.getItem("itemlist"));
       state.push(item);
     },
     DELETE_ITEM: (state, action) => {

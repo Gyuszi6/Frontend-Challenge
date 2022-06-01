@@ -1,16 +1,15 @@
 import { useCallback, useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { addItemToList } from "../store/items/itemsActions";
 import { ADD_ITEM } from "../store/items/itemsSlice";
 import axios from "axios";
 import "../styles/OrderForm.css";
-import { produceWithPatches } from "immer";
 
 const OrderForm = (item, editable) => {
   const [weight, setWeight] = useState("");
   const [packetPoint, setPacketPoint] = useState("");
   const [datas, setDatas] = useState([]);
   const dispatch = useDispatch();
+  const regexForNumbers = /^[0-9\b]+$/;
 
   const fetchPacketPoints = async () => {
     const response = await axios.get("https://cdn.fuvar.hu/dev/points.json");
@@ -26,17 +25,17 @@ const OrderForm = (item, editable) => {
     console.log(datas);
   };
 
-  function addZero(i) {
-    if (i < 10) {
-      i = "0" + i;
+  function addZero(num) {
+    if (num < 10) {
+      num = "0" + num;
     }
-    return i;
+    return num;
   }
 
   const date = new Date();
   let year = date.getFullYear();
-  let month = date.getMonth() + 1;
-  let day = date.getDate();
+  let month = addZero(date.getMonth() + 1);
+  let day = addZero(date.getDate());
   let hour = addZero(date.getHours());
   let min = addZero(date.getMinutes());
   let time = year + ". " + month + ". " + day + ". - " + hour + ":" + min;
@@ -65,12 +64,17 @@ const OrderForm = (item, editable) => {
           </div>
           <input
             className="weightinput"
-            type="number"
+            type="text"
             min="0"
             id="weight"
             value={weight}
             onChange={(e) => {
-              setWeight(e.target.value);
+              if (
+                regexForNumbers.test(e.target.value) ||
+                e.target.value === ""
+              ) {
+                setWeight(e.target.value);
+              }
             }}
             placeholder="gramm"
           />
