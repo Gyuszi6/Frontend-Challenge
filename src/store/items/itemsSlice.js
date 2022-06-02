@@ -17,11 +17,7 @@ const itemsSlice = createSlice({
     DELETE_ITEM: (state, action) => {
       return state.filter((item) => item.id !== action.payload.id);
     },
-    EDIT_ITEM: (state, action) => {
-      state.filter((item) => item.id === action.payload.id);
-      action.payload.weight = state.weight;
-      action.payload.packetPoint = state.packetPoint;
-    },
+    EDIT_ITEM: (state, action) => {},
   },
 });
 

@@ -56,12 +56,11 @@
 }
 
 .weight {
-  position: sticky;
-  margin-bottom: 10px;
+  margin-bottom: 0;
   width: 184px;
   height: 24px;
-  left: 120px;
-  top: 112px;
+  margin-top: 32px;
+  margin-left: 32px;
   font-family: "Open Sans";
   font-style: normal;
   font-weight: 700;
@@ -73,11 +72,9 @@
 }
 @media screen and (max-width: 360px) {
   .weight {
-    position: sticky;
     width: 296px;
     height: 24px;
-    left: 32px;
-    top: 120px;
+    margin-left: 16px;
     font-family: "Open Sans";
     font-style: normal;
     font-weight: 700;
@@ -90,13 +87,10 @@
 }
 
 .weightinput {
-  position: static;
   margin-left: 32px;
   margin-top: 16px;
   width: 376px;
   height: 40px;
-  left: 120px;
-  top: 152px;
   box-sizing: border-box;
   background: #ffffff;
   border: 1px solid #c7dae4;
@@ -104,14 +98,10 @@
 }
 @media screen and (max-width: 360px) {
   .weightinput {
-    position: sticky;
     width: 296px;
     height: 40px;
-    left: 32px;
-    top: 152px;
-    margin-left: 0;
+    margin-left: 16px;
     margin-top: 8px;
-
     background: #ffffff;
     border: 1px solid #c7dae4;
     border-radius: 8px;
@@ -124,13 +114,11 @@
 }
 
 .packetpoint {
-  position: static;
   margin-left: 32px;
   margin-top: 24px;
   width: 184px;
   height: 24px;
-  left: 120px;
-  top: 216px;
+  margin-bottom: 0;
   font-family: "Open Sans";
   font-style: normal;
   font-weight: 700;
@@ -142,14 +130,11 @@
 }
 @media screen and (max-width: 360px) {
   .packetpoint {
-    position: sticky;
     margin-top: 16px;
-    margin-left: 0;
+    margin-left: 16px;
     margin-bottom: 0;
     width: 296px;
     height: 24px;
-    left: 32px;
-    top: 120px;
     font-family: "Open Sans";
     font-style: normal;
     font-weight: 700;
@@ -164,11 +149,8 @@
 .packetpointinput {
   margin-left: 32px;
   margin-top: 16px;
-  position: static;
   width: 376px;
   height: 40px;
-  left: 120px;
-  top: 256px;
   box-sizing: border-box;
   background: #ffffff;
   border: 1px solid #c7dae4;
@@ -176,14 +158,10 @@
 }
 @media screen and (max-width: 360px) {
   .packetpointinput {
-    position: sticky;
     width: 296px;
     height: 40px;
-    left: 32px;
-    top: 152px;
-    margin-left: 0;
+    margin-left: 16px;
     margin-top: 8px;
-
     background: #ffffff;
     border: 1px solid #c7dae4;
     border-radius: 8px;
@@ -208,7 +186,6 @@
     margin-top: 24px;
     width: 296px;
     height: 40px;
-
     background: #c7dae4;
     border-radius: 32px;
   }

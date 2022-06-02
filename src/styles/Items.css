@@ -15,7 +15,6 @@
 
 @media screen and (max-width: 360px) {
   .list {
-    position: relative;
     width: 328px;
     height: 132px;
     top: 392px;
@@ -36,7 +35,8 @@
 }
 
 .datetitle {
-  position: relative;
+  width: 56px;
+  height: 24px;
   font-family: "Open Sans";
   font-style: normal;
   font-weight: 700;
@@ -54,6 +54,8 @@
   .datetitle {
     width: 56px;
     height: 24px;
+    margin-left: 16px;
+    margin-top: 24px;
     font-family: "Open Sans";
     font-style: normal;
     font-weight: 700;
@@ -70,7 +72,8 @@
 }
 
 .packetpointtitle {
-  position: absolute;
+  width: 144px;
+  height: 24px;
   font-family: "Open Sans";
   font-style: normal;
   font-weight: 700;
@@ -78,7 +81,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-left: 305px;
+  margin-left: 217px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -86,18 +89,16 @@
 
 @media screen and (max-width: 360px) {
   .packetpointtitle {
-    position: relative;
+    white-space: nowrap;
     width: 144px;
     height: 24px;
     margin-left: 48px;
+    margin-top: 24px;
     font-family: "Open Sans";
     font-style: normal;
     font-weight: 700;
     font-size: 15px;
     line-height: 20px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
@@ -106,7 +107,8 @@
 }
 
 .weighttitle {
-  position: absolute;
+  width: 144px;
+  height: 24px;
   font-family: "Open Sans";
   font-style: normal;
   font-weight: 700;
@@ -117,7 +119,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-left: 683px;
+  margin-left: 234px;
 }
 
 @media screen and (max-width: 360px) {
@@ -130,31 +132,26 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
 }
 
 .datevalue {
+  width: 144px;
+  height: 24px;
   margin-left: 32px;
-  margin-right: 129px;
   font-family: "Open Sans";
   font-style: normal;
   font-weight: 400;
   font-size: 15px;
   color: #5c717c;
+  margin-top: 0;
 }
 
 @media screen and (max-width: 360px) {
   .datevalue {
-    position: -webkit-sticky;
-    position: sticky;
     width: 88px;
     height: 40px;
-    left: 32px;
-    top: 492px;
-    margin-top: 0;
-    margin-right: 0;
+    margin-left: 16px;
+    margin-top: -4px;
     font-family: "Open Sans";
     font-style: normal;
     font-weight: 400;
@@ -165,7 +162,8 @@
 }
 
 .packetpointvalue {
-  position: absolute;
+  width: 264px;
+  height: 40px;
   font-family: "Open Sans";
   font-style: normal;
   font-weight: 400;
@@ -173,17 +171,17 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-left: 305px;
+  margin-left: 129px;
   color: #5c717c;
+  margin-top: 0;
 }
 
 @media screen and (max-width: 360px) {
   .packetpointvalue {
-    position: relative;
     width: 128px;
     height: 56px;
-    right: 8px;
-    margin: 0;
+    margin-left: 16px;
+    margin-top: -4px;
     font-family: "Open Sans";
     font-style: normal;
     font-weight: 400;
@@ -194,7 +192,8 @@
 }
 
 .weightvalue {
-  position: absolute;
+  width: 144px;
+  height: 24px;
   font-family: "Open Sans";
   font-style: normal;
   font-weight: 400;
@@ -202,8 +201,9 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-left: 683px;
+  margin-left: 114px;
   color: #5c717c;
+  margin-top: 0;
 }
 
 @media screen and (max-width: 360px) {
@@ -213,28 +213,50 @@
 }
 
 .deletebutton {
+  margin-left: 225px;
+  width: 14px;
+  height: 20px;
   border: none;
   background: #ffffff;
+  margin-top: -14px;
 }
 
 @media screen and (max-width: 360px) {
   .deletebutton {
-    position: relative;
+    margin-top: 42px;
+    margin-left: 27px;
     border: none;
     background: #ffffff;
   }
 }
 
+.deletebuttonp {
+  width: 17px;
+  height: 6px;
+  margin-bottom: 0;
+  margin-top: -7px;
+}
+
+@media screen and (max-width: 360px) {
+  .deletebuttonp {
+    margin-top: 40px;
+    margin-left: -214px;
+  }
+}
+
 .editbutton {
+  width: 18px;
+  height: 18px;
   border: none;
   background: #ffffff;
+  margin-left: 64px;
+  margin-top: -20px;
 }
 
 @media screen and (max-width: 360px) {
   .editbutton {
-    position: relative;
-    bottom: 37px;
-    right: 3px;
+    margin-top: -35px;
+    margin-left: 27px;
     border: none;
     background: #ffffff;
   }

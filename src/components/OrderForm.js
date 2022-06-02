@@ -1,13 +1,13 @@
-import { useCallback, useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
-import { ADD_ITEM } from "../store/items/itemsSlice";
+import { useContext, useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { ADD_ITEM, EDIT_ITEM } from "../store/items/itemsSlice";
 import axios from "axios";
 import "../styles/OrderForm.css";
 
-const OrderForm = (item, editable) => {
+const OrderForm = () => {
+  const [datas, setDatas] = useState([]);
   const [weight, setWeight] = useState("");
   const [packetPoint, setPacketPoint] = useState("");
-  const [datas, setDatas] = useState([]);
   const dispatch = useDispatch();
   const regexForNumbers = /^[0-9\b]+$/;
 
@@ -38,18 +38,17 @@ const OrderForm = (item, editable) => {
   let day = addZero(date.getDate());
   let hour = addZero(date.getHours());
   let min = addZero(date.getMinutes());
-  let time = year + ". " + month + ". " + day + ". - " + hour + ":" + min;
+  let time = year + ". " + month + ". " + day + ".  -" + hour + ":" + min;
 
   const submitHandler = (event) => {
     event.preventDefault();
     dispatch(
       ADD_ITEM({
-        weight: weight + " gramm",
+        weight: weight,
         packetPoint: packetPoint,
         date: time,
       })
     );
-
     setWeight("");
     setPacketPoint("");
   };

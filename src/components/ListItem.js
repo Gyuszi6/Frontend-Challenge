@@ -18,10 +18,6 @@ const ListItem = (item) => {
         packetPoint: item.packetPoint,
       })
     );
-    const editable = { weight: item.weight, packetPoint: item.packetPoint };
-    console.log(item.weight);
-    console.log(item.packetPoint);
-    return editable;
   };
 
   return (
@@ -30,15 +26,16 @@ const ListItem = (item) => {
         <p className="datetitle">Dátum</p>
         <p className="packetpointtitle">Csomagpont neve</p>
         <p className="weighttitle">Küldemény súlya</p>
+        <div className="deletebuttonp">
+          <DeleteIcon1 />
+        </div>
       </div>
-
       <div className="datarow">
         <p className="datevalue">{item.date}</p>
         <p className="packetpointvalue">{item.packetPoint}</p>
-        <p className="weightvalue">{item.weight}</p>
+        <p className="weightvalue">{item.weight + " gramm"}</p>
         <div className="icons">
           <button className="deletebutton" onClick={deleteItemHandler}>
-            <DeleteIcon1 />
             <DeleteIcon2 />
           </button>
           <button className="editbutton" onClick={editItemHandler}>

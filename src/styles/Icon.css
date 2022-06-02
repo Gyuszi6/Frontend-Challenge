@@ -1,5 +1,12 @@
-.deletebutton {
-  display: block;
-  margin: 0;
+.deleteicon1 {
+  margin-left: 230px;
+  margin-top: 42px;
+}
+
+@media screen and (min-width: 361px) {
+  .editicon {
+    margin-right: 35px;
+    margin-left: 0;
+  }
 }
 /*# sourceMappingURL=Icon.css.map */
