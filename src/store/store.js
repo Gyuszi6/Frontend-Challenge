@@ -1,10 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 
-import itemReducer from "./items/itemsSlice";
-import formReducer from "./form/formSlice";
+import stateReducer from "./state/stateSlice";
 
-const store = configureStore({
-  reducer: { items: itemReducer, form: formReducer },
+export const store = configureStore({
+  reducer: { state: stateReducer },
 });
-
-export default store;

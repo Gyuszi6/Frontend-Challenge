@@ -1,6 +1,6 @@
 import { DeleteIcon1, DeleteIcon2, EditIcon } from "./Icons";
 import { useDispatch } from "react-redux";
-import { DELETE_ITEM, EDIT_ITEM } from "../store/items/itemsSlice";
+import { DELETE_ITEM, START_EDIT_ITEM } from "../store/state/stateSlice";
 import "../styles/Items.css";
 
 const ListItem = (item) => {
@@ -12,7 +12,7 @@ const ListItem = (item) => {
 
   const editItemHandler = () => {
     dispatch(
-      EDIT_ITEM({
+      START_EDIT_ITEM({
         id: item.id,
         weight: item.weight,
         packetPoint: item.packetPoint,

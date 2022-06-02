@@ -1,17 +1,22 @@
-import { useContext, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { ADD_ITEM, EDIT_ITEM } from "../store/items/itemsSlice";
+import {
+  ADD_ITEM,
+  SET_ACTUAL_WEIGHT,
+  SET_ACTUAL_PACKET_POINT,
+  SET_ACTUAL_ID,
+  SAVE_EDITED_ITEM,
+} from "../store/state/stateSlice";
 import axios from "axios";
 import "../styles/OrderForm.css";
 
 const OrderForm = () => {
-  const [datas, setDatas] = useState([]);
-  const [weight, setWeight] = useState("");
-  const [packetPoint, setPacketPoint] = useState("");
+  const { actualWeight, actualPacketPoint, actualId } = useSelector(
+    (state) => state.state
+  );
   const dispatch = useDispatch();
   const regexForNumbers = /^[0-9\b]+$/;
 
-  const fetchPacketPoints = async () => {
+  /*const fetchPacketPoints = async () => {
     const response = await axios.get("https://cdn.fuvar.hu/dev/points.json");
     const transformedData = response.data.map((packetPoints) => {
       return {
@@ -23,7 +28,7 @@ const OrderForm = () => {
     });
     setDatas(transformedData);
     console.log(datas);
-  };
+  };*/
 
   function addZero(num) {
     if (num < 10) {
@@ -32,25 +37,28 @@ const OrderForm = () => {
     return num;
   }
 
-  const date = new Date();
-  let year = date.getFullYear();
-  let month = addZero(date.getMonth() + 1);
-  let day = addZero(date.getDate());
-  let hour = addZero(date.getHours());
-  let min = addZero(date.getMinutes());
-  let time = year + ". " + month + ". " + day + ".  -" + hour + ":" + min;
-
   const submitHandler = (event) => {
     event.preventDefault();
-    dispatch(
-      ADD_ITEM({
-        weight: weight,
-        packetPoint: packetPoint,
-        date: time,
-      })
-    );
-    setWeight("");
-    setPacketPoint("");
+    const date = new Date();
+    let year = date.getFullYear();
+    let month = addZero(date.getMonth() + 1);
+    let day = addZero(date.getDate());
+    let hour = addZero(date.getHours());
+    let min = addZero(date.getMinutes());
+    let time = year + ". " + month + ". " + day + ".  -" + hour + ":" + min;
+    const inputData = {
+      weight: actualWeight,
+      packetPoint: actualPacketPoint,
+      date: time,
+    };
+    if (actualId) {
+      dispatch(SAVE_EDITED_ITEM(inputData));
+      dispatch(SET_ACTUAL_ID(""));
+    } else {
+      dispatch(ADD_ITEM(inputData));
+    }
+    dispatch(SET_ACTUAL_WEIGHT(""));
+    dispatch(SET_ACTUAL_PACKET_POINT(""));
   };
 
   return (
@@ -66,13 +74,13 @@ const OrderForm = () => {
             type="text"
             min="0"
             id="weight"
-            value={weight}
+            value={actualWeight}
             onChange={(e) => {
               if (
                 regexForNumbers.test(e.target.value) ||
                 e.target.value === ""
               ) {
-                setWeight(e.target.value);
+                dispatch(SET_ACTUAL_WEIGHT(e.target.value));
               }
             }}
             placeholder="gramm"
@@ -86,19 +94,19 @@ const OrderForm = () => {
             className="packetpointinput"
             type="text"
             list="packetpoints"
-            value={packetPoint}
+            value={actualPacketPoint}
             onChange={(e) => {
-              setPacketPoint(e.target.value);
+              dispatch(SET_ACTUAL_PACKET_POINT(e.target.value));
             }}
           />
           <datalist id="packetpoints">
-            <option>{datas}</option>
+            <option>kecske</option>
           </datalist>
         </div>
         <button
           className="savebutton"
           type="submit"
-          disabled={weight <= 0 || packetPoint === ""}
+          disabled={actualWeight <= 0 || actualPacketPoint === ""}
         >
           <div className="buttontext">Mentés</div>
         </button>
