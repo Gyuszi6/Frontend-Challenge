@@ -2,10 +2,18 @@ import { createSlice } from "@reduxjs/toolkit";
 import { v4 as uuidv4 } from "uuid";
 
 const initialState = {
-  items: [],
-  actualWeight: "",
-  actualPacketPoint: "",
-  actualId: "",
+  items: localStorage.getItem("items")
+    ? JSON.parse(localStorage.getItem("items"))
+    : [],
+  actualWeight: localStorage.getItem("weight")
+    ? JSON.parse(localStorage.getItem("weight"))
+    : "",
+  actualPacketPoint: localStorage.getItem("packetpoint")
+    ? JSON.parse(localStorage.getItem("packetpoint"))
+    : "",
+  actualId: localStorage.getItem("id")
+    ? JSON.parse(localStorage.getItem("id"))
+    : "",
 };
 
 const stateSlice = createSlice({
@@ -20,14 +28,22 @@ const stateSlice = createSlice({
         date: action.payload.date,
       };
       state.items.push(item);
+      localStorage.setItem("items", JSON.stringify(state.items));
     },
     DELETE_ITEM: (state, action) => {
       state.items = state.items.filter((item) => item.id !== action.payload.id);
+      localStorage.setItem("items", JSON.stringify(state.items));
     },
     START_EDIT_ITEM: (state, action) => {
       state.actualId = action.payload.id;
       state.actualWeight = action.payload.weight;
       state.actualPacketPoint = action.payload.packetPoint;
+      localStorage.setItem("weight", JSON.stringify(action.payload.weight));
+      localStorage.setItem("id", JSON.stringify(action.payload.id));
+      localStorage.setItem(
+        "packetpoint",
+        JSON.stringify(action.payload.packetPoint)
+      );
     },
     SAVE_EDITED_ITEM: (state, action) => {
       let id = "";
@@ -39,15 +55,19 @@ const stateSlice = createSlice({
       }
       state.items[id].weight = action.payload.weight;
       state.items[id].packetPoint = action.payload.packetPoint;
+      localStorage.setItem("items", JSON.stringify(state.items));
     },
     SET_ACTUAL_WEIGHT: (state, action) => {
       state.actualWeight = action.payload;
+      localStorage.setItem("weight", JSON.stringify(action.payload));
     },
     SET_ACTUAL_PACKET_POINT: (state, action) => {
       state.actualPacketPoint = action.payload;
+      localStorage.setItem("packetpoint", JSON.stringify(action.payload));
     },
     SET_ACTUAL_ID: (state, action) => {
       state.actualId = action.payload;
+      localStorage.setItem("id", JSON.stringify(action.payload));
     },
   },
 });

@@ -8,6 +8,7 @@ import {
 } from "../store/state/stateSlice";
 import axios from "axios";
 import "../styles/OrderForm.css";
+import { options } from "./Options";
 
 const OrderForm = () => {
   const { actualWeight, actualPacketPoint, actualId } = useSelector(
@@ -100,7 +101,11 @@ const OrderForm = () => {
             }}
           />
           <datalist id="packetpoints">
-            <option>kecske</option>
+            {options.map((item) => (
+              <option key={item.title}>
+                {item.title},{item.address},{item.city}
+              </option>
+            ))}
           </datalist>
         </div>
         <button
