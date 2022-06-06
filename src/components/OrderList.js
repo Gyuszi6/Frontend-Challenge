@@ -17,6 +17,7 @@ const OrderList = () => {
               packetPoint={item.packetPoint}
               weight={item.weight}
               editing={item.editing}
+              state={item.state}
             />
           ))}
         </div>

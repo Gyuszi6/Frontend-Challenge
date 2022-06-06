@@ -5,13 +5,14 @@ import {
   SET_ACTUAL_PACKET_POINT,
   SET_ACTUAL_ID,
   SAVE_EDITED_ITEM,
+  SET_ACTUAL_FORM,
 } from "../store/state/stateSlice";
 import axios from "axios";
+import getActualDate from "./CurrentDate";
 import "../styles/OrderForm.css";
 import { options } from "./Options";
-
 const OrderForm = () => {
-  const { actualWeight, actualPacketPoint, actualId } = useSelector(
+  const { actualWeight, actualPacketPoint, actualId, actualForm } = useSelector(
     (state) => state.state
   );
   const dispatch = useDispatch();
@@ -31,30 +32,20 @@ const OrderForm = () => {
     console.log(datas);
   };*/
 
-  function addZero(num) {
-    if (num < 10) {
-      num = "0" + num;
-    }
-    return num;
-  }
-
   const submitHandler = (event) => {
     event.preventDefault();
-    const date = new Date();
-    let year = date.getFullYear();
-    let month = addZero(date.getMonth() + 1);
-    let day = addZero(date.getDate());
-    let hour = addZero(date.getHours());
-    let min = addZero(date.getMinutes());
-    let time = year + ". " + month + ". " + day + ".  -" + hour + ":" + min;
+
     const inputData = {
+      id: actualId,
       weight: actualWeight,
       packetPoint: actualPacketPoint,
-      date: time,
+      date: getActualDate(),
+      form: actualForm,
     };
     if (actualId) {
       dispatch(SAVE_EDITED_ITEM(inputData));
       dispatch(SET_ACTUAL_ID(""));
+      dispatch(SET_ACTUAL_FORM(!actualForm));
     } else {
       dispatch(ADD_ITEM(inputData));
     }

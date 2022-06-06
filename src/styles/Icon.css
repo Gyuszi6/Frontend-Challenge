@@ -1,12 +1,44 @@
 .deleteicon1 {
   margin-left: 230px;
   margin-top: 42px;
+  fill: #85a0ae;
+}
+
+.deleteicon2 {
+  fill: #85a0ae;
+}
+
+.editicon {
+  fill: #85a0ae;
 }
 
 @media screen and (min-width: 361px) {
   .editicon {
     margin-right: 35px;
     margin-left: 0;
+    fill: #85a0ae;
+  }
+}
+
+.deleteicon1editing {
+  margin-left: 230px;
+  margin-top: 42px;
+  fill: #17c873;
+}
+
+.deleteicon2editing {
+  fill: #17c873;
+}
+
+.editiconediting {
+  fill: #17c873;
+}
+
+@media screen and (min-width: 361px) {
+  .editiconediting {
+    margin-right: 35px;
+    margin-left: 0;
+    fill: #17c873;
   }
 }
 /*# sourceMappingURL=Icon.css.map */

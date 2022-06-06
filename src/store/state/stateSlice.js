@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { v4 as uuidv4 } from "uuid";
+import getActualDate from "../../components/CurrentDate";
 
 const initialState = {
   items: localStorage.getItem("items")
@@ -14,6 +15,10 @@ const initialState = {
   actualId: localStorage.getItem("id")
     ? JSON.parse(localStorage.getItem("id"))
     : "",
+  actualDate: getActualDate(),
+  actualForm: localStorage.getItem("form")
+    ? JSON.stringify(localStorage.getItem("form"))
+    : false,
 };
 
 const stateSlice = createSlice({
@@ -26,6 +31,7 @@ const stateSlice = createSlice({
         weight: action.payload.weight,
         packetPoint: action.payload.packetPoint,
         date: action.payload.date,
+        form: action.payload.form,
       };
       state.items.push(item);
       localStorage.setItem("items", JSON.stringify(state.items));
@@ -38,12 +44,16 @@ const stateSlice = createSlice({
       state.actualId = action.payload.id;
       state.actualWeight = action.payload.weight;
       state.actualPacketPoint = action.payload.packetPoint;
+      state.actualDate = action.payload.date;
+      state.actualForm = !action.payload.form;
+
       localStorage.setItem("weight", JSON.stringify(action.payload.weight));
       localStorage.setItem("id", JSON.stringify(action.payload.id));
       localStorage.setItem(
         "packetpoint",
         JSON.stringify(action.payload.packetPoint)
       );
+      localStorage.setItem("form", JSON.stringify(action.payload.form));
     },
     SAVE_EDITED_ITEM: (state, action) => {
       let id = "";
@@ -53,8 +63,10 @@ const stateSlice = createSlice({
           break;
         }
       }
+      state.items[id].form = !action.payload.form;
       state.items[id].weight = action.payload.weight;
       state.items[id].packetPoint = action.payload.packetPoint;
+      state.items[id].date = action.payload.date;
       localStorage.setItem("items", JSON.stringify(state.items));
     },
     SET_ACTUAL_WEIGHT: (state, action) => {
@@ -69,6 +81,10 @@ const stateSlice = createSlice({
       state.actualId = action.payload;
       localStorage.setItem("id", JSON.stringify(action.payload));
     },
+    SET_ACTUAL_FORM: (state, action) => {
+      state.actualForm = action.payload;
+      localStorage.setItem("form", JSON.stringify(action.payload));
+    },
   },
 });
 
@@ -80,6 +96,7 @@ export const {
   SET_ACTUAL_WEIGHT,
   SET_ACTUAL_PACKET_POINT,
   SET_ACTUAL_ID,
+  SET_ACTUAL_FORM,
 } = stateSlice.actions;
 
 export default stateSlice.reducer;
