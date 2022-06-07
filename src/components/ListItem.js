@@ -13,6 +13,7 @@ import {
   SET_ACTUAL_WEIGHT,
   SET_ACTUAL_PACKET_POINT,
   SET_ACTUAL_ID,
+  SET_ACTUAL_FORM,
 } from "../store/state/stateSlice";
 import "../styles/Items.css";
 
@@ -37,9 +38,10 @@ const ListItem = (item) => {
           weight: item.weight,
           packetPoint: item.packetPoint,
           date: item.date,
-          state: item.state,
+          form: item.form,
         })
       );
+      dispatch(SET_ACTUAL_FORM(true));
     }
   };
 
