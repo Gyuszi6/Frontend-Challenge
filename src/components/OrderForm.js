@@ -7,7 +7,6 @@ import {
   SAVE_EDITED_ITEM,
   SET_ACTUAL_FORM,
 } from "../store/state/stateSlice";
-import axios from "axios";
 import getActualDate from "./CurrentDate";
 import "../styles/OrderForm.css";
 import { options } from "./Options";
@@ -17,20 +16,6 @@ const OrderForm = () => {
   );
   const dispatch = useDispatch();
   const regexForNumbers = /^[0-9\b]+$/;
-
-  /*const fetchPacketPoints = async () => {
-    const response = await axios.get("https://cdn.fuvar.hu/dev/points.json");
-    const transformedData = response.data.map((packetPoints) => {
-      return {
-        id: packetPoints.title,
-        title: packetPoints.title,
-        city: packetPoints.city,
-        address: packetPoints.address,
-      };
-    });
-    setDatas(transformedData);
-    console.log(datas);
-  };*/
 
   const submitHandler = (event) => {
     event.preventDefault();

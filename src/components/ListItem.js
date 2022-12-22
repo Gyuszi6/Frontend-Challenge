@@ -86,13 +86,11 @@ const ListItem = (item) => {
               onClick={editItemHandler}
               title="Please finish editing before editing this item"
             >
-              {" "}
               <EditIconEditing />
             </button>
           )}
           {actualForm !== true && (
             <button className="editbutton" onClick={editItemHandler}>
-              {" "}
               <EditIcon />
             </button>
           )}
